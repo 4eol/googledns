@@ -42,7 +42,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/vokins/yhosts/mast
 
 cd /etc/storage/dnsmasq/dns
 echo "--- 下载AD hosts规则"
-wget --no-check-certificate https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts -O hosts
+wget --no-check-certificate https://raw.githubusercontent.com/vokins/yhosts/master/hosts -O hosts
 
 echo "…………精简AD hosts……………‥"
 echo "批量删除AD hosts内不必要的域名，可大量减少hosts行数与不想要的域名。包含dnsmasq规则union.conf域名、自定义白名单white.txt（关键词，一行一条）。"
