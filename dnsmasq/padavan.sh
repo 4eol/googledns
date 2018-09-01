@@ -36,13 +36,13 @@ cat > /etc/storage/dnsmasq/dns/start.sh << EOF
 #!/bin/sh
 cd /etc/storage/dnsmasq/dns/conf
 echo "--- 下载dnsmasq规则"
-wget --no-check-certificate https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/dnsmasq.conf -O /etc/storage/dnsmasq/dns/dnsfq;sed -i "1 i\## Download：\$(date "+%Y-%m-%d %H:%M:%S")" /etc/storage/dnsmasq/dns/dnsfq
+wget --no-check-certificate https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/dnsmasq.conf -O /etc/storage/dnsmasq/dns/dnsfq.conf;sed -i "1 i\## Download：\$(date "+%Y-%m-%d %H:%M:%S")" /etc/storage/dnsmasq/dns/dnsfq.conf
 wget --no-check-certificate https://raw.githubusercontent.com/vokins/yhosts/master/dnsmasq/ip.conf -O ip.conf;sed -i "1 i\## Download：\$(date "+%Y-%m-%d %H:%M:%S")" ip.conf
 wget --no-check-certificate https://raw.githubusercontent.com/vokins/yhosts/master/dnsmasq/union.conf -O union.conf;sed -i "1 i\## Download：\$(date "+%Y-%m-%d %H:%M:%S")" union.conf
 
 cd /etc/storage/dnsmasq/dns
 echo "--- 下载AD hosts规则"
-wget --no-check-certificate https://raw.githubusercontent.com/vokins/yhosts/master/hosts -O hosts
+wget --no-check-certificate https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts -O hosts
 
 echo "…………精简AD hosts……………‥"
 echo "批量删除AD hosts内不必要的域名，可大量减少hosts行数与不想要的域名。包含dnsmasq规则union.conf域名、自定义白名单white.txt（关键词，一行一条）。"
